@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Sharing Page</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Code Nots</h1>
+
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Hamburger icon -->
+            </div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="trailer.html">Trailer</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="home.html">Home</a>
+        <a href="Previous_Classes.html">Previous Classes</a>
+        <a href="pdf.html">PDF</a>
+        <a href="code.html">Codes</a>
+        <a href="contact-us.html">Contact-Us</a>
+        <a href="#" id="close-btn">&times;</a>
+    </div>
+
+    <!-- Code Sharing Sections -->
+    <div class="code-container">
+        <div class="code-block">
+            <h2>Python Code</h2>
+            <pre><code id="python-code"># Sample Python code 
+print("Hello, World!")
+            </code></pre>
+            <button onclick="copyCode('python-code')">Copy Code</button>
+        </div>
+
+    </div>
+
+    <script src="code.js"></script>
+
+</body>
+</html>

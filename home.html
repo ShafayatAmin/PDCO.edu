@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDCO - অনলাইন প্রোগ্রামিং ক্লাস</title>
+    <link rel="icon" href="reallogo.PNG" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <h1>PDCO</h1>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="trailer.html">Trailer</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="home.html">Home</a>
+        <a href="Previous_Classes.html">Previous Classes</a>
+        <a href="pdf.html">PDF</a>
+        <a href="code.html">Codes</a>
+        <a href="contact-us.html">Contact-Us</a>
+        <a href="#" id="close-btn">&times;</a>
+    </div>
+
+    <div class="button-section">
+        <button><a href="trailer.html">Trailer</a></button>
+        <p>Trailer বাটন আপনাকে কোর্সের টিজার বা প্রমোশনাল ভিডিওতে নিয়ে যাবে।</p>
+
+        <button><a href="mentors.html">Mentors</a></button>
+        <p>Mentors বাটন আপনাকে মেন্টরদের তালিকাতে নিয়ে যাবে যেখানে তাদের বিস্তারিত পাওয়া যাবে।</p>
+
+        <button><a href="home.html">Home</a></button>
+        <p>Home বাটন আপনাকে মূল হোমপেজে ফিরিয়ে নিয়ে যাবে।</p>
+
+        <button><a href="Previous_Classes.html">Previous Classes</a></button>
+        <p>Previous Classes বাটন আপনাকে পূর্ববর্তী ক্লাসগুলির তালিকায় নিয়ে যাবে।</p>
+
+        <button><a href="pdf.html">PDF</a></button>
+        <p>PDF বাটন আপনাকে ক্লাসের সকল PDF নোট এবং অন্যান্য ডকুমেন্টে নিয়ে যাবে।</p>
+
+        <button><a href="contact-us.html">Contact Us</a></button>
+        <p>Contact Us বাটন আপনাকে আমাদের সাথে যোগাযোগের জন্য ফর্ম বা অন্যান্য তথ্য নিয়ে যাবে।</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2024 PDCO. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
