@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PDCO</title>
+    <link rel="icon" href="reallogo.png" type="image/png">
+    <link rel="stylesheet" href="logstyle.css">
+</head>
+<body>
+
+    <!-- Google Translate Widget -->
+
+    <button id="fun-button">Fun</button>
+
+    <header>
+        <img src="logo.png" alt="PDCO Logo">
+        <h1>PDCO</h1>
+    </header>
+
+    <div class="container">
+        <h2>Login to PDCO</h2>
+
+        <div class="form-container">
+            <form id="login-form">
+                <!-- User role toggle -->
+                <label for="role-toggle">I am a:</label>
+                <div class="role-selection">
+                    <button type="button" id="instructor-btn" class="role-btn" data-role="instructor">Instructor</button>
+                    <button type="button" id="premium-btn" class="role-btn" data-role="premium-student">Premium Student</button>
+                    <button type="button" id="normal-btn" class="role-btn" data-role="normal-student">Normal Student</button>
+                </div>
+
+                <!-- Hidden input for role -->
+                <input type="hidden" id="selected-role" name="selected-role">
+
+                <!-- Email input -->
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <!-- Password input -->
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <!-- Submit button -->
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+    <script src="fonts.js"></script>
+</body>
+</html>
+   
+
+
+

@@ -1,0 +1,214 @@
+/* Global styles */
+body {
+    background-color: #181818;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 120vh;
+}
+
+/* Header styling */
+header {
+    background-color: #202020;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    display: inline;
+    margin-left: 10px;
+}
+
+/* Navigation styling */
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    z-index: 11;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(240, 240, 240, 0.9);
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+/* Button styles */
+button {
+    background: linear-gradient(45deg, #ff6b6b, #f8d800);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff4757, #ffa502);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    background: linear-gradient(45deg, #c0392b, #d35400);
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive adjustments for buttons on smaller screens */
+@media only screen and (max-width: 600px) {
+    button {
+        width: 90%;
+        padding: 12px;
+        font-size: 1rem;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .button-section {
+        align-items: stretch;
+    }
+}
+
+
+p {
+    color: rgb(127,255,212);
+    font-size: 0.9rem;
+    margin-top: -10px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #111;
+    color: #fff;
+    width: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 600px) {
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .button-section {
+        width: 100%;
+    }
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+#close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    color: white;
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    width: 250px;
+}
