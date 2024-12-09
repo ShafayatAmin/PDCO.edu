@@ -1,0 +1,197 @@
+/* Global styles */
+body {
+    background-color: #181818;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background-color: #202020;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    display: inline;
+    margin-left: 10px;
+}
+
+/* Hamburger menu */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1001;
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+#close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    width: 250px;
+}
+
+/* Transition for the hamburger icon when sidebar opens */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Centered content */
+.centered {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Highlight link styling (glow effect) */
+.highlight-link {
+    color: #FFD700;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+.highlight-link:hover {
+    color: #FF6347;
+    text-shadow: 0 0 8px #FF6347, 0 0 15px #FFD700;
+}
+
+
+/* Gallery Container */
+.gallery-container {
+    margin: 80px auto; /* Push gallery further down */
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Increase gap between images */
+    position: relative;
+}
+
+.gallery-item {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item-center {
+    width: 200px; /* Larger center image */
+    height: 200px;
+    opacity: 1;
+}
+
+/* Circular rotation logic */
+.gallery-item-left,
+.gallery-item-center,
+.gallery-item-right {
+    transition: all 1s ease;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    margin-top: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 600px) {
+    .gallery-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gallery-item-center {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Responsive Sidebar */
+@media only screen and (max-width: 600px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        top: 15px;
+        left: 15px;
+    }
+}

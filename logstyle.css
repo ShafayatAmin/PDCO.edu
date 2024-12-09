@@ -1,0 +1,130 @@
+/* General body styling */
+body {
+    background-color: #181818;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #202020;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    display: inline;
+    margin-left: 10px;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #202020;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: left;
+}
+
+.form-container label {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #cc0000;
+}
+
+.form-container p {
+    color: #FFFFFF;
+}
+
+.form-container a {
+    color: #FF0000;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.role-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.role-btn {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.role-btn:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+.role-btn.selected {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+/* Style the Fun button */
+#fun-button {
+    position: fixed;
+    top: 80px; /* Placed below the translator button */
+    right: 20px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    background-color: #e67e22; /* Orange color for distinction */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#fun-button:hover {
+    background-color: #d35400;
+}

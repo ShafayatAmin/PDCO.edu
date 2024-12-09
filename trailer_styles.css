@@ -1,0 +1,138 @@
+/* Body and general styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818; 
+    color: #ffffff; 
+    margin: 0;
+    padding: 20px;
+}
+
+
+/* Video container styling */
+.video-list {
+    max-width: 620px; 
+    margin: auto;
+    padding: 10px;
+    background: #282828; 
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* PDF container styling */
+.pdf-container {
+    max-width: 1000px; /* Adjust max width if needed */
+    margin: 40px auto; /* Centers the container horizontally */
+    padding: 20px;
+    background-color: #1c1c1c; /* Dark background for PDF section */
+    border-radius: 8px;
+}
+
+.pdf-container h1 {
+    text-align: center; /* Center the heading */
+    margin-top: 0; /* Ensure there's no extra space above */
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-size: 24px; /* Adjust font size */
+    color: #ffffff;
+}
+
+.pdf-container iframe {
+    display: block;
+    width: 100%;
+    height: 600px; /* Set a fixed height for the iframe */
+    border: none;
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .hamburger {
+        margin-left: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .video-list {
+        max-width: 100%; /* Make the video container take full width */
+        padding: 5px;
+    }
+
+    iframe {
+        width: 100%; /* Ensure iframe scales to fit mobile screen */
+        height: 200px; /* Reduce iframe height for smaller screens */
+    }
+
+    .pdf-container {
+        max-width: 100%; /* Full width on mobile */
+        margin: 20px auto;
+        padding: 10px; /* Reduce padding */
+    }
+
+    .pdf-container iframe {
+        height: 300px; /* Reduce iframe height for mobile */
+    }
+}
+
+/* Extra small devices (max-width 480px) */
+@media screen and (max-width: 480px) {
+    iframe {
+        height: 180px; /* Further reduce iframe height for extra small screens */
+    }
+
+    .pdf-container iframe {
+        height: 250px; /* Reduce PDF height */
+    }
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+#close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    color: white;
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    width: 250px;
+}

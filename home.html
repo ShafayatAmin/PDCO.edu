@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDCO - অনলাইন প্রোগ্রামিং ক্লাস</title>
+    <link rel="icon" href="reallogo.PNG" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <h1>PDCO</h1>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="trailer.html">Trailer</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="home.html">Home</a>
+        <a href="Previous_Classes.html">Previous Classes</a>
+        <a href="pdf.html">PDF</a>
+        <a href="code.html">Codes</a>
+        <a href="contact-us.html">Contact-Us</a>
+        <a href="#" id="close-btn">&times;</a>
+    </div>
+
+    <!-- Centered Text Section -->
+    <div class="content-section centered">
+        <h2>সাগতম আপনাকে আমাদের লেটেস্ট কোর্সে</h2>
+        <p>এই কোর্সে আমরা সম্পূর্ণ একটি ক্যালকুলেটর তৈরি করতে শিখব। যদি আপনারা আমাদের কোর্স সম্পর্কে না জানেন বা নিয়ম-কানুন না জানেন, তাহলে নিচের লিঙ্কে যোগাযোগ করার অনুরোধ রইল।</p>
+        
+        <p><a href="https://www.facebook.com/profile.php?id=61567845714224" target="_blank" class="highlight-link">যোগাযোগ করতে ক্লিক করুন</a></p>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Photo Gallery Section -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item gallery-item-left"><img src="1.png" alt="Image 5"></div>
+            <div class="gallery-item gallery-item-center"><img src="2.png" alt="Image 4"></div>
+            <div class="gallery-item gallery-item-right"><img src="3.png" alt="Image 3"></div>
+            <div class="gallery-item"><img src="4.png" alt="Image 2"></div>
+            <div class="gallery-item"><img src="5.png" alt="Image 1"></div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 PDCO. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 1;
+        
+        function rotateGallery() {
+            galleryItems.forEach((item, index) => {
+                item.classList.remove('gallery-item-left', 'gallery-item-center', 'gallery-item-right');
+                const newIndex = (index + currentIndex) % galleryItems.length;
+        
+                if (newIndex === 0) {
+                    item.classList.add('gallery-item-left');
+                } else if (newIndex === 1) {
+                    item.classList.add('gallery-item-center');
+                } else {
+                    item.classList.add('gallery-item-right');
+                }
+            });
+        
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+        }
+        
+        setInterval(rotateGallery, 5000); // Change every 5 seconds
+        </script>
+</body>
+</html>

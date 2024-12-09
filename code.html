@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Sharing Page</title>
+    <link rel="stylesheet" href="code.css">
+    <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Code Nots</h1>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="trailer.html">Trailer</a>
+        <a href="mentors.html">Mentors</a>
+        <a href="home.html">Home</a>
+        <a href="Previous_Classes.html">Previous Classes</a>
+        <a href="pdf.html">PDF</a>
+        <a href="code.html">Codes</a>
+        <a href="contact-us.html">Contact-Us</a>
+        <a href="#" id="close-btn">&times;</a>
+    </div>
+
+    <!-- Code Sharing Section -->
+    <div class="code-container">
+        <h2 style="color: black;">Jupyter Notebook (.ipynb) Code</h2>
+        <div id="code-content"></div>
+        <button id="copy-btn">Copy Code</button> <!-- Copy button -->
+        <a href="codes.ipynb" download="codes.ipynb" class="download-btn">Download .ipynb File</a> <!-- Styled Download Button -->
+    </div>
+
+    <script>
+        // Sidebar control logic
+        const sidebar = document.getElementById('sidebar');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Open sidebar when the menu icon is clicked
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.add('open');
+        });
+
+        // Close sidebar when the close button is clicked
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+        });
+
+        // Close the sidebar if the user clicks outside the sidebar
+        window.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) && !menuIcon.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+    <script>
+        // Fetch and display the Jupyter Notebook (.ipynb) file content
+        async function displayNotebook() {
+            try {
+                const response = await fetch('codes.ipynb');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                const notebook = await response.json(); // Read as JSON
+
+                // Extract code cells
+                let codeContent = '';
+                notebook.cells.forEach(cell => {
+                    if (cell.cell_type === 'code') {
+                        codeContent += cell.source.join('') + '\n'; // Combine code lines
+                    }
+                });
+
+                // Show the code in a <pre> tag with Prism class
+                const codeContentDiv = document.getElementById("code-content");
+                codeContentDiv.innerHTML = `<pre><code class="language-python" id="code">${codeContent}</code></pre>`;
+                
+                // Highlight the code
+                Prism.highlightAll();
+            } catch (error) {
+                const codeContentDiv = document.getElementById("code-content");
+                codeContentDiv.innerHTML = `<p>Error loading Jupyter Notebook: ${error.message}</p>`;
+            }
+        }
+
+        // Function to copy code to clipboard
+        function copyCode() {
+            const codeElement = document.getElementById("code");
+            const textArea = document.createElement("textarea");
+            textArea.value = codeElement.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("Code copied to clipboard!"); // Alert message
+        }
+
+        // Call the function to display the code
+        displayNotebook();
+
+        // Add event listener to copy button
+        document.getElementById("copy-btn").addEventListener("click", copyCode);
+    </script>
+    <script src="prism.js"></script>
+</body>
+</html>
